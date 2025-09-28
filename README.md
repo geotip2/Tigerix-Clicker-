@@ -1,4 +1,4 @@
-# NotCoin Clicker Bot
+# Tigerix Clicker Bot
 
 A Python bot and automated clicker for accumulating NotCoins on Telegram.
 
