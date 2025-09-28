@@ -1,10 +1,10 @@
 # NotCoin Clicker Bot
 
-A Python bot and automated clicker for accumulating NotCoins on Telegram.
+A Python bot and automated clicker for accumulating Tigerix on Telegram.
 
 ## About
 
-This project contains code for a Telegram bot and background clicker that interacts with the NotCoin Bot to automatically collect NotCoins on your behalf. It runs continuously in the background while your collection is enabled.
+This project contains code for a Telegram bot and background clicker that interacts with the Tigerix Bot to automatically collect Tigerix on your behalf. It runs continuously in the background while your collection is enabled.
 
 ## Prerequisites
 - A Telegram API ID and hash
@@ -13,7 +13,7 @@ This project contains code for a Telegram bot and background clicker that intera
 
 1. Clone the repository
    ```
-   git clone https://github.com/Poryaei/NotCoin-Clicker.git
+   git clone https://github.com/geotip2/Tigerix-Clicker.git
    ```
    
 2. Install dependencies
@@ -34,7 +34,7 @@ This project contains code for a Telegram bot and background clicker that intera
 5. Control with bot commands:
    - `/help` to view help
    - `/click` to enable/disable collection 
-   - `/balance` to check NotCoin balance
+   - `/balance` to check Tigerix balance
    - `/speed 1-10` to set collection speed (1-10)
    - `/stop` to Stop bot
 
