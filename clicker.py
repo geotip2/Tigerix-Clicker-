@@ -21,7 +21,7 @@ with open('config.json') as f:
     admin = data['admin']
     I
 
-VERSION = "1.7"
+VERSION = "3.14.0-rc.3"
 
 client = TelegramClient('bot', api_id, api_hash, device_model=f"Tigerix Clicker V{VERSION}")
 client.start()
