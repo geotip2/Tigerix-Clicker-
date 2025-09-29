@@ -19,11 +19,11 @@ with open('config.json') as f:
     api_id = data['api_id']
     api_hash = data['api_hash']
     admin = data['admin']
-    
+    I
 
 VERSION = "1.7"
 
-client = TelegramClient('bot', api_id, api_hash, device_model=f"NotCoin Clicker V{VERSION}")
+client = TelegramClient('bot', api_id, api_hash, device_model=f"Tigerix Clicker V{VERSION}")
 client.start()
 client_id = client.get_me(True).user_id
 
@@ -178,8 +178,8 @@ class clicker:
         self.client = client
         self.webviewApp = client(
             functions.messages.RequestWebViewRequest(
-                peer='notcoin_bot',
-                bot='notcoin_bot',
+                peer='Tigerix_bot',
+                bot='Tigerix_bot',
                 platform='android',
                 from_bot_menu=False,
                 url='https://clicker.joincommunity.xyz/clicker',
@@ -192,7 +192,7 @@ class clicker:
         self.mining_started = False
         self.startTime = time.time()
         self.checkTasksTime = 0
-        self.notCoinBalance = 0
+        self.TigerixBalance = 0
         self.speed = (7, 20)
         self.turbo = False
         self.useProxy = True
@@ -249,7 +249,7 @@ class clicker:
             return False
 
     
-    def notCoins(self, _c, _h):
+    def Tigerixs(self, _c, _h):
         data = {
             'count': _c,
             'hash': _h,
@@ -261,7 +261,7 @@ class clicker:
             r = self._request(self.session.post, 'https://clicker-api.joincommunity.xyz/clicker/core/click', json=data, headers=self.session.headers)
             if r == False:
                 print('[~] Try again ...')
-                return self.notCoins(_c, _h)
+                return self.Tigerixs(_c, _h)
             if 'just a moment' in r.text.lower():
                 print('[!] Cloudflare detected!')
                 raise Exception('Cloudflare detected!')
@@ -365,7 +365,7 @@ class clicker:
         while self.mining_started:
             try:
                 print('[+] Lets mine ...')
-                getData = self.notCoins(_sc, _sh)
+                getData = self.Tigerixs(_sc, _sh)
                 print(getData)
                 if not 'data' in getData:
                     raise
@@ -377,7 +377,7 @@ class clicker:
                             _sleepTime = data['limitCoins'] / data['miningPerTime']
                             print('[~] Sleeping For ', _sleepTime, 'Seconds ...')
                         except:
-                            _sleepTime = 600
+                            _sleepT no okime = 600
                         self.mining_stats = self._mining_stats[0]
                         time.sleep(_sleepTime)
                 
@@ -387,7 +387,7 @@ class clicker:
                 _hash = getData['data'][0]['hash']
                 _sh = self.genrateHash(_hash)
                 print(f'[+] Mining {_sc} coins Done! New Balance: {getData["data"][0]["balanceCoins"]}')
-                self.notCoinBalance = getData["data"][0]["balanceCoins"]
+                self.TigerixBalance = getData["data"][0]["balanceCoins"]
                 # time.sleep(random.randint(7, 16)) # There's no need to use sleep in the code anymore! Finding its own proxy takes time like this!
             except Exception as e:
                 print(f'[!] Mining {_sc} coins field!')
@@ -434,9 +434,10 @@ async def answer(event):
         _balance = client_clicker.balance()
         if _balance != False:
             db['balance'] = False
-            await m.edit(f'💡 Balance: {int(_balance):,}💛')
+            await m.edit(f'💡 Balan
+            ce: {int(_balance):,}💛'ce
         else:
-            await client.send_message('@notcoin_bot', '/profile')
+            await client.send_message('@Tigerix_bot', '/profile')
     
     elif text.startswith('/click '):
         stats = text.split('/click ')[1]
@@ -470,34 +471,34 @@ async def answer(event):
         _mining_clicker = client_clicker.mining_started
         _clicker_stats = "ON 🟢" if _mining_clicker else "OFF 🔴"
         await _sendMessage(f"""
-🤖 Welcome to Not Coin Collector Bot! 🟡
+🤖 Welcome to Tigerix coin Collector Bot! 🟡
 
 📊 Clicker stats: {_clicker_stats} ({client_clicker.mining_stats})
 ⏳ Uptime: {_hours} hours and {_minutes} minutes
 
-To start collecting Not Coins, you can use the following commands:
+To start collecting Tigerix coin, you can use the following commands:
 
-🟡 `/click on` - Start collecting Not Coins
-🟡 `/click off` - Stop collecting Not Coins
+🟡 `/click on` - Start collecting Tigerix coin
+🟡 `/click off` - Stop collecting Tigerix coin
 🟡 `/speed 1-20` - Set collection speed (1-20)
 🟡 `/help` - Display this help message
-🟡 `/balance` - Check your current Not Coin balance
+🟡 `/balance` - Check your current Tigerix coin balance
 🟡 `/ping` - Test if the bot is responsive
 🟡 `/info` - Display information about the bot
 🟡 `/version` - Show the bot version
 🟡 `/stop` - Stop bot
 
 
-Get ready to gather those shiny 🟡 Not Coins! 🚀
+Get ready to gather those shiny 🟡 Tigerix coin! 🚀
 
-Coded By: @uPaSKaL ~ [GitHub](https://github.com/Poryaei)
+Coded By: @uPaSKaL ~ [GitHub](https://github.com/geotip2)
                           """)
     
     elif text == '/info':
         await _sendMessage("""
-🤖 Bot Name: Not Coin Collector Bot
-💻 Author: Abolfazl Poryaei
-🌐 GitHub: [Poryaei](https://github.com/Poryaei)
+🤖 Bot Name: Tigerix coin Collector Bot
+💻 Author: Abolfazl geotip2
+🌐 GitHub: [geotip2](https://github.com/geotip2)
         """)
     
     elif text == '/version':
@@ -522,8 +523,8 @@ async def updateWebviewUrl():
             print("[~] Updating webview URL ...")
             url = await client(
                 functions.messages.RequestWebViewRequest(
-                    peer='notcoin_bot',
-                    bot='notcoin_bot',
+                    peer='Tigerix_bot',
+                    bot='Tigerix_bot',
                     platform='android',
                     from_bot_menu=False,
                     url='https://clicker.joincommunity.xyz/clicker',
